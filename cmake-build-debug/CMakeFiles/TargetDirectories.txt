@@ -1,3 +1,0 @@
-E:/LEARN/Self-learn mod/Computer GL/LEARN/CLION Project/Global/cmake-build-debug/CMakeFiles/Global.dir
-E:/LEARN/Self-learn mod/Computer GL/LEARN/CLION Project/Global/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/LEARN/Self-learn mod/Computer GL/LEARN/CLION Project/Global/cmake-build-debug/CMakeFiles/rebuild_cache.dir

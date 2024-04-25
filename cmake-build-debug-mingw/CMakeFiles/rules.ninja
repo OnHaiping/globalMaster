@@ -27,7 +27,7 @@ rule C_COMPILER__Global_unscanned_Debug
 rule CXX_COMPILER__Global_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}E:\SOFTWARE\Mingw\mingw64\bin\c++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = ${LAUNCHER}${CODE_CHECK}E:\SOFTWARE\Mingw\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -35,7 +35,7 @@ rule CXX_COMPILER__Global_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Global_Debug
-  command = cmd.exe /C "$PRE_LINK && E:\SOFTWARE\Mingw\mingw64\bin\c++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && E:\SOFTWARE\Mingw\mingw64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -52,7 +52,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "E:\SOFTWARE\IDE\Jet B\Clion\CLion 2023.3.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S"E:\LEARN\Self-learn mod\Computer GL\LEARN\CLION Project\Global" -B"E:\LEARN\Self-learn mod\Computer GL\LEARN\CLION Project\Global\cmake-build-debug-mingw"
+  command = "E:\SOFTWARE\IDE\Jet B\Clion\CLion 2023.3.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S"E:\LEARN\Self-learnMod\Computer GL\LEARN\CLION Project\Global" -B"E:\LEARN\Self-learnMod\Computer GL\LEARN\CLION Project\Global\cmake-build-debug-mingw"
   description = Re-running CMake...
   generator = 1
 

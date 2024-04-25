@@ -64,7 +64,7 @@ int main()
 
     // 加载纹理图像
     int width, height, nrChannels;
-    unsigned char *data = stbi_load(R"(E:\LEARN\Self-learn mod\Computer GL\LEARN\CLION Project\Global\images\earth.jpg)", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load(R"(E:\LEARN\Self-learnMod\Computer GL\LEARN\CLION Project\Global\images\earth.jpg)", &width, &height, &nrChannels, 0);
 
 // 创建纹理对象
     unsigned int texture;
@@ -149,6 +149,7 @@ int main()
     //设置顶点属性指针
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+    //纹理坐标设置
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
@@ -157,8 +158,8 @@ int main()
     glBindVertexArray(0);
 #pragma endregion
 //---------------------------------------顶点数据（End）----------------------------
-    const char* vs = R"(E:\LEARN\Self-learn mod\Computer GL\LEARN\CLION Project\Global\glsl\vertexShaderSource.glsl)";
-    const char* fs = R"(E:\LEARN\Self-learn mod\Computer GL\LEARN\CLION Project\Global\glsl\fragmentShaderSource.glsl)";
+    const char* vs = R"(E:\LEARN\Self-learnMod\Computer GL\LEARN\CLION Project\Global\glsl\vertexShaderSource.glsl)";
+    const char* fs = R"(E:\LEARN\Self-learnMod\Computer GL\LEARN\CLION Project\Global\glsl\fragmentShaderSource.glsl)";
     /*4-着色器*/
     Shader shader(vs, fs);
 
@@ -178,7 +179,7 @@ int main()
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
         glBindVertexArray(VAO);
-        //使用线框模式绘制
+        //使用线框模式绘制是GL_FILL
         glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         glDrawElements(GL_TRIANGLES, X_SEGMENTS * Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
 
